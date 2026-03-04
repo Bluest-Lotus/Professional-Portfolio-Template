@@ -1,0 +1,22 @@
+title: "John’s Portfolio"
+description: "Engineering projects, design systems, and technical work."
+baseurl: ""
+url: "https://yourusername.github.io"
+
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
