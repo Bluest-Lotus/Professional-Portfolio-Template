@@ -6,11 +6,11 @@ permalink: /projects/
 
 <h1>Projects</h1>
 
-<ul class="project-list">
+<div class="project-grid">
   {% for project in site.projects %}
-    <li>
-      <a href="{{ project.url }}">{{ project.title }}</a>
+    <a class="project-card" href="{{ project.url }}">
+      <h2>{{ project.title }}</h2>
       <p>{{ project.description }}</p>
-    </li>
+    </a>
   {% endfor %}
-</ul>
+</div>

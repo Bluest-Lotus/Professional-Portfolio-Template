@@ -1,49 +1,77 @@
+/* -----------------------------------------------------------
+   Global Design System
+   ----------------------------------------------------------- */
+
 :root {
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+
   --bg: #ffffff;
-  --text: #111111;
-  --accent: #0077ff;
-  --radius: 6px;
-  --space: 1rem;
+  --text: #1a1a1a;
+  --subtle: #555;
+  --accent: #3a7afe;
 }
 
 [data-theme="dark"] {
-  --bg: #111111;
-  --text: #f5f5f5;
-  --accent: #4da3ff;
+  --bg: #0f0f0f;
+  --text: #eaeaea;
+  --subtle: #aaa;
+  --accent: #6ea2ff;
 }
 
+/* Base */
+
 body {
+  margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
 
 .container {
   max-width: 900px;
   margin: auto;
-  padding: var(--space);
+  padding: var(--space-3) var(--space-2);
 }
 
-nav a {
-  margin-right: var(--space);
+/* Navigation */
+
+.site-header {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: var(--space-2) 0;
 }
 
-button#theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-/* -----------------------------------------------------------
-   Hero Section
-   ----------------------------------------------------------- */
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.nav a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Hero */
 
 .hero {
   padding: var(--space-4) 0;
-  text-align: left;
 }
 
 .hero h1 {
@@ -79,4 +107,37 @@ button#theme-toggle {
 .cta:hover {
   background: #2f6ae0;
   transform: translateY(-2px);
+}
+
+/* Project Grid */
+
+.project-grid {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: var(--space-3);
+}
+
+.project-card {
+  background: rgba(0,0,0,0.03);
+  padding: var(--space-2);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+
+.site-footer {
+  margin-top: var(--space-4);
+  padding: var(--space-2) 0;
+  text-align: center;
+  color: var(--subtle);
+  font-size: 0.9rem;
 }
