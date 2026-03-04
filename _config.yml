@@ -1,22 +1,54 @@
+# ============================
+# BASIC SITE SETTINGS
+# ============================
 title: "John’s Portfolio"
+email: your-email@example.com
 description: "Engineering projects, design systems, and technical work."
-baseurl: ""
+baseurl: ""   # Leave empty for root GitHub Pages site
 url: "https://yourusername.github.io"
 
-markdown: kramdown
-
+# ============================
+# PROJECT COLLECTION
+# ============================
 collections:
   projects:
     output: true
     permalink: /projects/:name/
 
-plugins:
-  - jekyll-seo-tag
-  - jekyll-feed
+# ============================
+# THEME DISABLED
+# ============================
+theme: null
 
+# ============================
+# PLUGINS
+# ============================
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# ============================
+# MARKDOWN + URL SETTINGS
+# ============================
+markdown: kramdown
+permalink: pretty
+
+# ============================
+# DEFAULTS
+# ============================
 defaults:
   - scope:
       path: ""
       type: "projects"
     values:
       layout: project
+
+# ============================
+# FILES TO IGNORE
+# ============================
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
